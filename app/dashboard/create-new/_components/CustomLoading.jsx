@@ -22,6 +22,7 @@ function CustomLoading({ loading }) {
             alt="Loading animation"
             width={100}
             height={100}
+            unoptimized
             className="mb-4"
           />
           <h2 className="text-xl font-semibold text-gray-700">

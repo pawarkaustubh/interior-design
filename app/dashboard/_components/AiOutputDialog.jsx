@@ -20,16 +20,25 @@ function AiOutputDialog({ openDialog, closeDialog, orgImage, aiImage }) {
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogTitle>Result:</AlertDialogTitle>
-          <ReactBeforeSliderComponent
-            firstImage={{
-                imageUrl: aiImage
-            }}
-            secondImage={{
-                imageUrl: orgImage
-            }}
-          />
-          <Button onClick={() => closeDialog(false)}>Close</Button>
+          {/* ✅ Accessibility description */}
+          <AlertDialogDescription>
+            This is a comparison between your original room image and the AI-redesigned version.
+          </AlertDialogDescription>
         </AlertDialogHeader>
+
+        {/* Slider should not be in the header */}
+        <ReactBeforeSliderComponent
+          firstImage={{
+              imageUrl: aiImage
+          }}
+          secondImage={{
+              imageUrl: orgImage
+          }}
+        />
+
+        <AlertDialogFooter>
+          <Button onClick={() => closeDialog(false)}>Close</Button>
+        </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>
   );
