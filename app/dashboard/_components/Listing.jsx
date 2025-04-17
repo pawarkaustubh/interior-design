@@ -41,9 +41,9 @@ function Listing() {
             <h2 className='font-medium text-primary text-xl mb-10'>AI Room Studio</h2>
             {/* {Listing} */}
             <div className='grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-10'>
-              {userRoomList.map((room, index) => {
+              {userRoomList.map((room, index) => (
                 <RoomDesignCard key={index} room={room}/>
-              })}
+              ))}
             </div>
         </div>
       }
